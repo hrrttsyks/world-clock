@@ -17,6 +17,15 @@ function updateTime() {
   bangkokTimeElement.innerHTML = bangkokCurrentTimeElement.format(
     "HH:mm:ss[<small>]A[</small>]"
   );
+  let pragueElement = document.querySelector("#poland");
+  let pragueDateElement = pragueElement.querySelector(".date");
+  let pragueTimeElement = pragueElement.querySelector(".time");
+  let pragueCurrentTimeElement = moment().tz("Europe/Prague");
+
+  pragueDateElement.innerHTML = moment().format("MMMM Do YYYY");
+  pragueTimeElement.innerHTML = pragueCurrentTimeElement.format(
+    "HH:mm:ss[<small>]A[</small>]"
+  );
 }
 
 function updateCity(event) {
