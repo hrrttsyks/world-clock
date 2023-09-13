@@ -1,1 +1,23 @@
+function updateTime() {
+  let londonElement = document.querySelector("#london");
+  let londonDateElement = londonElement.querySelector(".date");
+  let londonTimeElement = londonElement.querySelector(".time");
+  let londonCurrentTimeElement = moment().tz("Europe/London");
 
+  londonDateElement.innerHTML = londonCurrentTimeElement.format("MMMM Do YYYY");
+  londonTimeElement.innerHTML = londonCurrentTimeElement.format(
+    "HH:mm:ss[<small>]A[</small>]"
+  );
+  let bangkokElement = document.querySelector("#bangkok");
+  let bangkokDateElement = bangkokElement.querySelector(".date");
+  let bangkokTimeElement = bangkokElement.querySelector(".time");
+  let bangkokCurrentTimeElement = moment().tz("Asia/Bangkok");
+
+  bangkokDateElement.innerHTML = moment().format("MMMM Do YYYY");
+  bangkokTimeElement.innerHTML = bangkokCurrentTimeElement.format(
+    "HH:mm:ss[<small>]A[</small>]"
+  );
+}
+
+updateTime();
+setInterval(updateTime), 1000;
