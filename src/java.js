@@ -37,7 +37,8 @@ function updateCity(event) {
               "HH:mm:ss [<small>]A[</small>]"
             )}</div>
           </div>
-        </div>`;
+        </div>
+        <a href="/">Back to main cities</a>`;
 }
 
 updateTime();
